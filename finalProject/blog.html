@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog — Back to Nature</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="small-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <h1>Back to Nature</h1>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="main.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html" class="active">Blog</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Blog — recipes & reviews</h2>
+
+    <section class="blog-list">
+      <article class="post">
+        <img src="images/img7.jpg" alt="recipe 1">
+        <h3>3-ingredient face balm</h3>
+        <p>Simple balm for dry skin with shea, oil and beeswax. Good for gifts.</p>
+        <a class="link" href="#">Read more →</a>
+      </article>
+
+      <article class="post">
+        <img src="images/img6.jpg" alt="recipe 2">
+        <h3>Gentle scrub</h3>
+        <p>Oat-meal scrub that soothes sensitive skin. Affiliate options linked.</p>
+        <a class="link" href="#">Read more →</a>
+      </article>
+
+      <article class="post">
+        <img src="images/img8.jpg" alt="recipe 3">
+        <h3>Natural body butter</h3>
+        <p>How to make body butter for everyday use.</p>
+        <a class="link" href="#">Read more →</a>
+      </article>
+    </section>
+
+    <aside class="subscribe">
+      <h4>Join the list</h4>
+      <form id="subscribe">
+        <label for="subemail">Email</label>
+        <input id="subemail" type="email" placeholder="you@example.com" required>
+        <div class="checkbox-row">
+          <input type="checkbox" id="recipes" name="pref" checked><label for="recipes">Recipes</label>
+          <input type="checkbox" id="gifts" name="pref"><label for="gifts">Gift ideas</label>
+        </div>
+        <button class="btn">Subscribe</button>
+      </form>
+    </aside>
+  </main>
+
+  <footer class="site-footer small">
+    <div class="container">
+      <p>Back to Nature</p>
+    </div>
+  </footer>
+
+  <script>
+    const sub = document.getElementById('subscribe');
+    sub.addEventListener('submit', function(e){
+      e.preventDefault();
+      const email = document.getElementById('subemail').value;
+      if (!/^\S+@\S+\.\S+$/.test(email)) {
+        alert('Enter valid email');
+        return;
+      }
+      alert('Thanks! (demo)');
+      sub.reset();
+    });
+  </script>
+</body>
+</html>

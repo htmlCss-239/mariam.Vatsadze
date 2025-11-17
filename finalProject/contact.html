@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Back to Nature</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="small-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <h1>Back to Nature</h1>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="main.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container contact-page">
+    <h2>Contact & Register</h2>
+
+    <div class="contact-grid">
+      <section>
+        <h3>Send us a message</h3>
+        <form id="contactForm" action="#" method="post">
+          <label for="name">Name</label>
+          <input id="name" type="text" required>
+
+          <label for="email">Email</label>
+          <input id="email" type="email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" rows="5"></textarea>
+
+          <fieldset>
+            <legend>Reason</legend>
+            <label><input type="radio" name="reason" value="question" checked> Question</label>
+            <label><input type="radio" name="reason" value="order"> Order</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Interests</legend>
+            <label><input type="checkbox" name="interest" value="recipes"> Recipes</label>
+            <label><input type="checkbox" name="interest" value="affiliate"> Affiliate picks</label>
+            <label><input type="checkbox" name="interest" value="gifts"> Gifts</label>
+          </fieldset>
+
+          <button class="btn" type="submit">Send</button>
+        </form>
+      </section>
+
+      <aside>
+        <h3>Visit us</h3>
+        <p>We are online only. For collaborations or affiliate proposals, use the form.</p>
+        <img src="images/contact.jpg" alt="contact photo">
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer small">
+    <div class="container">
+      <p>Back to Nature</p>
+    </div>
+  </footer>
+
+  <script>
+    const cform = document.getElementById('contactForm');
+    cform.addEventListener('submit', function(e){
+      const email = document.getElementById('email').value;
+      const name = document.getElementById('name').value;
+      if (name.trim() === '' || !/^\S+@\S+\.\S+$/.test(email)) {
+        e.preventDefault();
+        alert('Please enter a valid name and email.');
+      } else {
+        alert('Message sent (demo).');
+        cform.reset();
+        e.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>

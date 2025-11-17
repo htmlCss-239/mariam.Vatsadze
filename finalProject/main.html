@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Back to Nature</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <h1>Back to Nature</h1>
+        <p class="tag">natural skin care • clean beauty • gift ideas</p>
+      </div>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="main.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="has-sub">
+            <a href="services.html">Services ▾</a>
+            <ul class="sub">
+              <li><a href="services.html#consult">Consultations</a></li>
+              <li><a href="services.html#recipes">Custom Recipes</a></li>
+              <li><a href="services.html#affiliate">Affiliate Deals</a></li>
+            </ul>
+          </li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="hero">
+      <div class="slider">
+        <img src="images/slide1.jpg" alt="slide 1">
+        <img src="images/slide2.jpg" alt="slide 2">
+        <img src="images/slide3.jpg" alt="slide 3">
+      </div>
+      <div class="hero-text">
+        <h2>Clean beauty, simple recipes</h2>
+        <p>Homemade natural skincare & makeup ideas. Affiliate picks & gift guides.</p>
+        <a class="btn" href="blog.html">Read recipes</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro container">
+      <div class="grid-2">
+        <article>
+          <h3>Featured recipe</h3>
+          <img src="./images/img1.jpg" alt="featured recipe">
+          <p>Simple nourishing face serum you can make at home with just 3 ingredients.</p>
+          <a href="blog.html" class="link">Full recipe →</a>
+        </article>
+
+        <aside class="sidebar">
+          <h4>Gift ideas</h4>
+          <ul>
+            <li>Handmade soap set <span class="small">Affiliate</span></li>
+            <li>Natural lip balms <span class="small">Affiliate</span></li>
+            <li>Zero-waste kit</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="cards container">
+      <h3>Latest posts</h3>
+      <div class="card-grid">
+        <article class="card">
+          <img src="images/img2.jpg" alt="">
+          <h4>DIY facial Oil</h4>
+          <p>Hydrating oil with eucalyptus and glycerin — quick recipe.</p>
+        </article>
+        <article class="card">
+          <img src="images/img4.jpg" alt="">
+          <h4>Mineral makeup basics</h4>
+          <p>How to choose powders and boost coverage naturally.</p>
+        </article>
+        <article class="card">
+          <img src="images/img3.jpg" alt="">
+          <h4>Gift boxes on budget</h4>
+          <p>Curated affordable natural beauty gift ideas.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Back to Nature — clean beauty and natural recipes</p>
+      <nav class="footer-nav">
+        <a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="blog.html">Blog</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const form = document.querySelector('form');
+    if (form) {
+      form.addEventListener('submit', function(e){
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        if (name && email) {
+          if (name.value.trim() === '' || !/^\S+@\S+\.\S+$/.test(email.value)) {
+            e.preventDefault();
+            alert('Please enter a valid name and email.');
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>
